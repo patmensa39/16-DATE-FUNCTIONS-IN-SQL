@@ -1,0 +1,16 @@
+/*16 DATE FUNCTIONS  IN SQL 
+Created by Patrick Mensah 
+Date Created: 04/11/2023
+Description:  This query shows how to use date  functions in SQL 
+*/
+
+--Assuming we want to calculate each employees age
+
+SELECT 
+    LastName,
+    FirstName,
+    Birthdate,
+    strftime('%Y-%m-%d',Birthdate) AS 'Birthdate No Timecode', -- this '%Y-%m-%d'  put the Birthdate field into Year Month and day the Birthday is the field that was selected
+    strftime('%Y-%m-%d','now') - strftime('%Y-%m-%d',Birthdate) AS 'Employee Age'-- This  calculate the employee's age by subtracting the Birthdate from Today's date 
+FROM
+    Employee
